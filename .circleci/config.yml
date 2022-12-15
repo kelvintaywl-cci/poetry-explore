@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: cimg/python:3.9
     steps:
-      - run:
+      - run: |
           which poetry
           poetry --version
       - run: |
