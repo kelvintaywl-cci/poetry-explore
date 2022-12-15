@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  self-update:
+    docker:
+      - image: cimg/python:3.9
+    steps:
+      - run:
+          which poetry
+          poetry --version
+      - run: |
+          poetry self update
+      - run: |
+          poetry --version
+
+workflows:
+  main:
+    jobs:
+      - self-update
