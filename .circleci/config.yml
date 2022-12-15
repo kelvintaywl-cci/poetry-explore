@@ -9,7 +9,8 @@ jobs:
           which poetry
           poetry --version
       - run: |
-          poetry self update
+          # force downgrade
+          poetry self update 1.2.1
       - run: |
           poetry --version
 
